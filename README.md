@@ -23,11 +23,14 @@ key自己上去注册账户密码，并添加以下接口：
                       
                       
                       
-        com.wei.news.utils.Constant 类下的 APIKEY替换一下自己的。
-        public static final String APIKEY="userKey";
+       com.wei.news.utils.Constant 类下的 APIKEY替换一下自己的。
+       public static final String APIKEY="userKey";
        账号余额良心提供key，直接下载项目编译直接运行。
        没有余额了就没法用了会报 500异常 ，那就要自己去注册了。
+       接口的响应速度比较慢，我也没办法优化了。
        
+
+  喜欢的别忘了点 “Star” ，支持一下。
  
  效果：
  
@@ -37,7 +40,7 @@ key自己上去注册账户密码，并添加以下接口：
  ![image](https://github.com/laiweifeng/WeMedia/blob/master/screenPicture/20181214_114330.gif)
  
  
-  喜欢的别忘了点 “Star”
+
        
        
 
