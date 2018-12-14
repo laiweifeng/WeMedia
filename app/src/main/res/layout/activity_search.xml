@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_record_back_20dp"/>
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_search_bg"
+            android:maxLines="1"
+            android:drawableLeft="@mipmap/search"
+            android:singleLine="true"
+            android:imeOptions="actionSearch"
+            />
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/main_color"
+            android:background="@android:color/transparent"
+            android:text="搜索"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/lv_tab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#00000000"
+            android:dividerHeight="15dp"
+            ></ListView>
+
+        <com.wei.news.sdk.widget.LoadStatusView
+            android:id="@+id/loadStatusView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+        </com.wei.news.sdk.widget.LoadStatusView>
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>

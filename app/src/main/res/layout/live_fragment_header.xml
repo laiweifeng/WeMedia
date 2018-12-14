@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+        <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/banner_main_zoomStack"
+            style="@style/BannerDefaultStyle"
+            app:banner_indicatorGravity="bottom|left"
+            android:layout_marginTop="10dp"
+            app:banner_transitionEffect="zoom" />
+
+        <GridView
+            android:id="@+id/gv_tags"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:verticalSpacing="15dp"
+            android:layout_marginTop="10dp"
+            android:listSelector="@android:color/transparent"
+            android:scrollbars="none"
+            android:numColumns="4"></GridView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="10dp"
+            ></View>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="推荐直播"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            />
+
+</LinearLayout>

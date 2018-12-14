@@ -1,0 +1,180 @@
+<resources>
+    <string name="app_name">微娱乐</string>
+
+
+    <!--
+
+    * news_news_top	要闻
+     news_news_finance	财经
+     news_news_ent	娱乐
+     news_news_sports	体育
+     news_news_tech	科技
+     news_news_ssh	社会
+     news_news_mil	军事
+     news_news_lad	时尚
+     news_news_doco	纪录片
+     news_news_world	国际
+     news_news_cul	文化
+     news_news_house	房产
+     news_news_fx	佛学
+     news_news_auto	汽车
+     news_news_game	游戏
+     news_news_istock	股票
+     news_news_ac	动漫
+     news_news_lic	理财
+     news_news_msh	政务
+     news_news_jiaju	家居
+     news_news_nba	NBA
+     news_news_esport	电竞
+     news_news_digi	数码
+
+    -->
+
+
+
+
+    <array name="home_tag">
+        <item>要闻</item>
+        <item>财经</item>
+        <item>娱乐</item>
+        <item>体育</item>
+        <item>科技</item>
+        <item>社会</item>
+        <item>军事</item>
+        <item>时尚</item>
+        <item>国际</item>
+        <item>文化</item>
+        <item>房产</item>
+        <item>房产</item>
+        <item>佛学</item>
+        <item>汽车</item>
+        <item>游戏</item>
+        <item>股票</item>
+        <item>动漫</item>
+        <item>理财</item>
+        <item>政务</item>
+        <item>家居</item>
+        <item>NBA</item>
+        <item>电竞</item>
+        <item>数码</item>
+
+
+    </array>
+
+
+   <!-- news_news_astro	星座
+    news_news_movie	星座
+    news_news_edu	教育
+    news_news_meirong	美容
+    news_news_tv	电视剧
+    news_news_strike	搏击
+    news_news_health	健康
+    news_news_sheying	摄影
+    news_news_lifes	生活
+    news_news_visit	旅游
+    news_news_hanliu	韩流
+    news_news_zongyi	综艺
+    news_news_food	美食
+    news_news_baby	育儿
+    news_news_pet	宠物
+    news_news_history	历史
+    news_news_music	音乐
+    news_news_media	传媒
+    news_news_kepu	科普
+    news_news_football	足球
+    news_news_twentyf	必读
+    news_news_schoolyard	校园
+    news_news_shizheng	时政-->
+    <array name="add_tag">
+
+        <item>星座</item>
+        <item>教育</item>
+        <item>美容</item>
+        <item>电视剧</item>
+        <item>搏击</item>
+        <item>健康</item>
+        <item>摄影</item>
+        <item>生活</item>
+        <item>旅游</item>
+        <item>韩流</item>
+        <item>综艺</item>
+        <item>美食</item>
+        <item>育儿</item>
+        <item>宠物</item>
+        <item>历史</item>
+        <item>音乐</item>
+        <item>传媒</item>
+        <item>科普</item>
+        <item>足球</item>
+        <item>必读</item>
+        <item>校园</item>
+        <item>时政</item>
+
+    </array>
+    <array name="game_tag">
+        <item>动作</item>
+        <item>角色扮演</item>
+        <item>射击</item>
+        <item>武侠</item>
+        <item>奇幻</item>
+        <item>恐怖</item>
+        <item>欧美魔幻</item>
+        <item>军事战争</item>
+        <item>篮球</item>
+        <item>消除</item>
+        <item>像素</item>
+        <item>二次元</item>
+        <item>塔防</item>
+        <item>僵尸</item>
+        <item>解谜</item>
+        <item>跑酷</item>
+        <item>音乐</item>
+    </array>
+
+    <array name="app_tag">
+        <item>下载</item>
+        <item>安装包</item>
+        <item>已安装</item>
+    </array>
+
+
+    <string name="state_idle">闲置</string>
+    <string name="state_pending">等待</string>
+    <string name="state_unknown">未知</string>
+    <string name="state_running">运行</string>
+    <string name="pause">暂停</string>
+    <string name="taskstart">任务开始</string>
+    <string name="connected">连接完成</string>
+    <string name="downloading">正在下载</string>
+    <string name="continues">继续</string>
+    <string name="paused">已暂停</string>
+    <string name="completed">已完成</string>
+    <string name="complete">完成</string>
+    <string name="total_downloads">总下载量：</string>
+    <string name="error">错误</string>
+    <string name="mb">MB</string>
+    <string name="install">安装</string>
+    <string name="wait">等待</string>
+    <string name="download">下载</string>
+    <string name="retry">重试</string>
+    <string name="app_manager">应用管理</string>
+    <string name="exit">再按一次退出</string>
+    <string name="news">腾讯新闻</string>
+    <string name="video">抖音小视频</string>
+    <string name="app_download">游戏下载</string>
+    <string name="bili_live">哔哩哔哩直播</string>
+    <string name="me">Github:laiWeiFeng</string>
+    <string name="edit">编辑</string>
+    <string name="delete">删除</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="game_score">游戏评分</string>
+    <string name="load_error">内容加载失败，请重试！</string>
+    <string name="reload">重新加载</string>
+    <string name="loading_tip">服务器较慢,请稍等</string>
+    <string name="input_search_content">请输入搜索内容！</string>
+    <string name="no_search_data">Sorry,没有搜索到相关数据！</string>
+    <string name="no_more">Sorry,没有更多相关数据！</string>
+    <string name="tip_click_retry">加载失败，点击重试！</string>
+    <string name="all_tag">所有栏目</string>
+</resources>

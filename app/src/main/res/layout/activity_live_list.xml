@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_record_back_20dp"/>
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_search_bg"
+            android:maxLines="1"
+            android:drawableLeft="@mipmap/search"
+            android:singleLine="true"
+            android:imeOptions="actionSearch"/>
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/main_color"
+            android:background="@android:color/transparent"
+            android:text="搜索"/>
+
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <com.wei.news.sdk.widget.GridViewWithHeaderAndFooter
+                android:id="@+id/gv_live_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:verticalSpacing="20dp"
+                android:horizontalSpacing="5dp"
+                android:listSelector="@android:color/transparent"
+                android:padding="10dp"
+                android:scrollbars="none"
+                android:numColumns="2"></com.wei.news.sdk.widget.GridViewWithHeaderAndFooter>
+
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+        <com.wei.news.sdk.widget.LoadStatusView
+            android:id="@+id/loadStatusView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+        </com.wei.news.sdk.widget.LoadStatusView>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.wei.news.sdk.widget.SearchBoxView
+        android:id="@+id/searchview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.wei.news.sdk.widget.SearchBoxView>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rootLayout"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F3F3F3">
+
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <com.wei.news.sdk.widget.GridViewWithHeaderAndFooter
+                android:id="@+id/gv_live_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:verticalSpacing="20dp"
+                android:horizontalSpacing="15dp"
+                android:listSelector="@android:color/transparent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:scrollbars="none"
+                android:numColumns="2"></com.wei.news.sdk.widget.GridViewWithHeaderAndFooter>
+
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <com.wei.news.sdk.widget.LoadStatusView
+            android:id="@+id/loadStatusView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+        </com.wei.news.sdk.widget.LoadStatusView>
+
+
+    </RelativeLayout>
+</LinearLayout>

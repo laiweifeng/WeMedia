@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wei.news">
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    //用于硬盘缓存和读取
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    //它可以监听用户的连接状态并在用户重新连接到网络时重启之前失败的请求
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".live.ui.LiveActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            android:theme="@style/NoActionBarBlackTheme"
+            >
+        </activity>
+        <activity android:name=".MainActivity" > </activity>
+        <activity android:name=".headline.ui.NewsDetailsActivity"
+            android:theme="@style/ActionBarTheme"></activity>
+        <activity android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".live.ui.LiveListActivity"></activity>
+        <activity android:name=".games.ui.DownloadManagerActivity"
+            android:theme="@style/ActionBarTheme"></activity>
+        <activity android:name=".games.ui.GameDescActivity"></activity>
+        <activity android:name=".games.ui.GamePictureActivity" />
+
+        <activity android:name=".headline.ui.NewsSearchActivity"
+           ></activity>
+
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.wei.news.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+
+    </application>
+
+</manifest>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape>
+          <!--  <corners android:radius="8.0dip" />-->
+            <!-- 填充的颜色，颜色为自定义 -->
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <!--<corners android:radius="8.0dip" />-->
+                <!-- <gradient
+                    android:startColor="@color/black"
+                    android:endColor="@color/blue"
+                    android:centerColor="@color/lightbule"
+                    android:angle="270.0" /> -->
+                <!-- 填充的颜色 -->
+                <solid android:color="@color/main_color" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>
