@@ -20,7 +20,7 @@ public class Constant {
     //                      3.小咖秀
     //                      4.360手机助手
     //      这次良心提供，没有余额了就没法用了会报 500异常
-    public static final String APIKEY="K1Wx0A1hhp5BKiMivD6ygDHziFKXfB=YGJ48A8K03iV48Y64c0kukcAzF0mMcEDJ2";
+    public static final String APIKEY="K1Wx0A1hhp5BKiMivD6ygDHziFKXfBYGJ48A8K03iV48Y64c0kukcAzF0mMcEDJ2";
     //腾讯新闻接口参数详情浏览 http://www.idataapi.cn/product/detail/90
     public static final String BASE_URL="http://api01.idataapi.cn:8000/";
 
