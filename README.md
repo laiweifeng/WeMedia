@@ -39,6 +39,12 @@ key自己上去注册账户密码，并添加以下接口：
  ![image](https://github.com/laiweifeng/WeMedia/blob/master/screenPicture/20181214_114313.gif)
  ![image](https://github.com/laiweifeng/WeMedia/blob/master/screenPicture/20181214_114330.gif)
  
+ 演示APK下载
+ 
+ 
+  ![image](https://github.com/laiweifeng/WeMedia/blob/master/screenPicture/1544769249.png)
+
+ 
  
 
        
