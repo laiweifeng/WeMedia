@@ -3,7 +3,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <com.wei.news.sdk.widget.SearchBoxView
         android:id="@+id/searchview"
@@ -13,7 +14,7 @@
     </com.wei.news.sdk.widget.SearchBoxView>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/rootLayout"
+        android:id="@+id/rootview"
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#F3F3F3">
@@ -43,12 +44,6 @@
 
         </android.support.v4.widget.SwipeRefreshLayout>
 
-        <com.wei.news.sdk.widget.LoadStatusView
-            android:id="@+id/loadStatusView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-        </com.wei.news.sdk.widget.LoadStatusView>
 
 
     </RelativeLayout>

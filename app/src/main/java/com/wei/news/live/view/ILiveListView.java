@@ -14,6 +14,5 @@ public interface ILiveListView extends BaseView {
     void showErrorMoreLoadView();
     void showMoreLoadingView();
     void showFootView();
-    void addDisposable(Disposable disposable);
 
 }

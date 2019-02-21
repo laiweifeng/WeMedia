@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.wei.news.sdk.widget.LoadStatusView;
 import com.wei.news.utils.L;
 
 import butterknife.ButterKnife;
@@ -18,6 +19,7 @@ public abstract class BaseFragment extends Fragment {
 	private boolean isFragmentVisibleToUser;
 	private boolean isViewCreate;
 	private boolean canLoadData=true;
+	private LoadStatusView loadStatusView;
 
 	@Nullable
 	@Override
@@ -25,8 +27,21 @@ public abstract class BaseFragment extends Fragment {
 		View view = inflater.inflate(getLayoutId(), null);
 		ButterKnife.bind(this, view);
 		isViewCreate=true;
-
+		loadStatusView = new LoadStatusView(getContext());
 		return view;
+	}
+
+	/**
+	 * 添加加载状态背景
+	 */
+	public void addLoadView(int rootViewId) {
+		if(getView()!=null){
+			((ViewGroup)getView().findViewById(rootViewId)).addView(loadStatusView);
+		}
+	}
+
+	public LoadStatusView getLoadStatusView(){
+		return  loadStatusView;
 	}
 
 	//前一个fragment对用户来说是隐藏还是显示，

@@ -31,6 +31,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import cn.bingoogolapple.bgabanner.BGABanner;
+import io.reactivex.disposables.Disposable;
 
 public class LiveFragment extends MvpFragment<LiveChannelPresenter> implements ILiveChannelView, SwipeRefreshLayout.OnRefreshListener, AdapterView.OnItemClickListener, LoadStatusView.onReloadClickListener, View.OnClickListener {
 
@@ -46,8 +47,6 @@ public class LiveFragment extends MvpFragment<LiveChannelPresenter> implements I
 
     @BindView(R.id.gv_live_list)
     GridViewWithHeaderAndFooter gv_live_list;
-    @BindView(R.id.loadStatusView)
-    LoadStatusView loadStatusView;
 
 
     ArrayList<LiveListEntity.Data> liveListDataList;
@@ -80,6 +79,8 @@ public class LiveFragment extends MvpFragment<LiveChannelPresenter> implements I
         searchview.setIcon(R.drawable.ic_bilibili);
 
         cacheManager = new CacheManager<LiveListEntity.Data>();
+
+        addLoadView(R.id.rootview);
     }
 
 
@@ -112,7 +113,7 @@ public class LiveFragment extends MvpFragment<LiveChannelPresenter> implements I
         swipeRefreshLayout.setOnRefreshListener(this);
         gv_live_list.setOnItemClickListener(this);
         gv_tags.setOnItemClickListener(this);
-        loadStatusView.setonReloadClickListener(this);
+        getLoadStatusView().setonReloadClickListener(this);
         searchview.setOnClickListener(this);
     }
 
@@ -137,7 +138,7 @@ public class LiveFragment extends MvpFragment<LiveChannelPresenter> implements I
 
     @Override
     public void loadLiveListData(List<LiveListEntity.Data> liveListDataList) {
-        loadStatusView.hideLoadStatus();
+        getLoadStatusView().hideLoadStatus();
         this.liveListDataList.clear();
         this.liveListDataList.addAll(liveListDataList);
         cacheManager.putCache(getContext(),HOT_LIVE_TAG,this.liveListDataList);
@@ -151,7 +152,7 @@ public class LiveFragment extends MvpFragment<LiveChannelPresenter> implements I
     public void showLoadingView() {
         swipeRefreshLayout.setRefreshing(true);
         if(liveListDataList.size()<=0){
-            loadStatusView.showLoading();
+            getLoadStatusView().showLoading();
         }
 
     }
@@ -170,8 +171,13 @@ public class LiveFragment extends MvpFragment<LiveChannelPresenter> implements I
     @Override
     public void showReload() {
         if(liveListDataList.size()<=0){
-            loadStatusView.showReload();
+            getLoadStatusView().showReload();
         }
+    }
+
+    @Override
+    public void addDisposable(Disposable disposable) {
+
     }
 
     @Override

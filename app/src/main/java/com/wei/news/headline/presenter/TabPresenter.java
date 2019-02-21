@@ -48,7 +48,7 @@ public class TabPresenter extends BasePresenter<ITabView,ITabModel> implements I
             }
             @Override
             public void onSub(Disposable d) {
-
+                mvpView.addDisposable(d);
             }
         });
     }
@@ -83,7 +83,7 @@ public class TabPresenter extends BasePresenter<ITabView,ITabModel> implements I
 
             @Override
             public void onSub(Disposable d) {
-
+                mvpView.addDisposable(d);
             }
         });
     }

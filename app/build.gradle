@@ -52,6 +52,7 @@ dependencies {
     implementation 'com.hyman:flowlayout-lib:1.1.2'
     //Splash
     implementation 'com.github.ViksaaSkool:AwesomeSplash:v1.0.0'
+    //banner
     implementation 'cn.bingoogolapple:bga-banner:2.2.5@aar'
     implementation 'com.android.support:support-v4:27.1.1'
     //okdownload

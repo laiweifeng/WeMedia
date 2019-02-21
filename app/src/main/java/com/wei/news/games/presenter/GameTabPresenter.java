@@ -49,7 +49,7 @@ public class GameTabPresenter extends BasePresenter<IGameTabView,IGameTabModel> 
 
             @Override
             public void onSub(Disposable d) {
-
+                mvpView.addDisposable(d);
             }
         });
     }
@@ -88,7 +88,7 @@ public class GameTabPresenter extends BasePresenter<IGameTabView,IGameTabModel> 
             }
             @Override
             public void onSub(Disposable d) {
-
+                mvpView.addDisposable(d);
             }
         });
     }

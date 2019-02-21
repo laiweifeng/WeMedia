@@ -12,6 +12,18 @@ public class VideoEntity {
     private String dataType;
     private String retcode;
 
+    @Override
+    public String toString() {
+        return "VideoEntity{" +
+                "hasNext=" + hasNext +
+                ", pageToken='" + pageToken + '\'' +
+                ", appCode='" + appCode + '\'' +
+                ", data=" + data +
+                ", dataType='" + dataType + '\'' +
+                ", retcode='" + retcode + '\'' +
+                '}';
+    }
+
     public boolean isHasNext() {
         return hasNext;
     }
@@ -37,6 +49,47 @@ public class VideoEntity {
     }
 
     public  class  Data{
+        @Override
+        public String toString() {
+            return "Data{" +
+                    "url='" + url + '\'' +
+                    ", publishDate=" + publishDate +
+                    ", videoUrls=" + videoUrls +
+                    ", favoriteCount='" + favoriteCount + '\'' +
+                    ", id='" + id + '\'' +
+                    ", publishDateStr='" + publishDateStr + '\'' +
+                    ", posterScreenName='" + posterScreenName + '\'' +
+                    ", mediaType='" + mediaType + '\'' +
+                    ", description='" + description + '\'' +
+                    ", audioId='" + audioId + '\'' +
+                    ", likeCount=" + likeCount +
+                    ", rating=" + rating +
+                    ", durationMin='" + durationMin + '\'' +
+                    ", geoPoint=" + geoPoint +
+                    ", isFree=" + isFree +
+                    ", country='" + country + '\'' +
+                    ", viewCount=" + viewCount +
+                    ", catPathKey='" + catPathKey + '\'' +
+                    ", updateDate=" + updateDate +
+                    ", dislikeCount='" + dislikeCount + '\'' +
+                    ", memberOnly=" + memberOnly +
+                    ", coverUrl='" + coverUrl + '\'' +
+                    ", posterId='" + posterId + '\'' +
+                    ", tags=" + tags +
+                    ", commentCount=" + commentCount +
+                    ", title='" + title + '\'' +
+                    ", partList=" + partList +
+                    ", danmakuCount=" + danmakuCount +
+                    ", imageUrls=" + imageUrls +
+                    ", imageURLs=" + imageURLs +
+                    ", labels=" + labels +
+                    ", pDate=" + pDate +
+                    ", subtitle=" + subtitle +
+                    ", shareCount=" + shareCount +
+                    ", commenterScreenName=" + commenterScreenName +
+                    ", sellerScreenName=" + sellerScreenName +
+                    '}';
+        }
 
         private String url;
         private long publishDate;

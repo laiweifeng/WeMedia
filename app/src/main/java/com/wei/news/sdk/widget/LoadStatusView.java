@@ -1,6 +1,7 @@
 package com.wei.news.sdk.widget;
 
 import android.content.Context;
+import android.graphics.drawable.AnimationDrawable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,7 @@ public class LoadStatusView extends RelativeLayout {
     private onReloadClickListener reloadClickListener;
     private ImageView iv_statusPicture;
     private TextView tv_message;
+    private AnimationDrawable mAnimationDrawable;
 
     public LoadStatusView(Context context) {
         this(context,null);
@@ -41,23 +43,30 @@ public class LoadStatusView extends RelativeLayout {
             }
         });
 
+        mAnimationDrawable = (AnimationDrawable) getResources().getDrawable(R.drawable.loading_anim);
+        iv_statusPicture.setBackgroundDrawable(mAnimationDrawable);
+        mAnimationDrawable.start();
+
         hideLoadStatus();
     }
 
 
     public void hideLoadStatus(){
+        mAnimationDrawable.stop();
        setVisibility(View.GONE);
     }
     public void showReload(){
         btn_reload.setVisibility(View.VISIBLE);
-        iv_statusPicture.setBackgroundResource(R.drawable.ic_load_error);
+        mAnimationDrawable.stop();
+        iv_statusPicture.setBackgroundResource(R.drawable.img_tips_error_banner_tv);
         tv_message.setText(R.string.load_error);
         setVisibility(View.VISIBLE);
     }
 
     public void showLoading(){
         btn_reload.setVisibility(View.GONE);
-        iv_statusPicture.setBackgroundResource(R.drawable.ic_loading_status);
+        iv_statusPicture.setBackgroundDrawable(mAnimationDrawable);
+        mAnimationDrawable.start();
         tv_message.setText(R.string.loading_tip);
         setVisibility(View.VISIBLE);
     }

@@ -48,8 +48,6 @@ public class NewsSearchActivity extends MvpActivity<NewsSearchPresenter> impleme
     @BindView(R.id.lv_tab)
     ListView listView;
 
-    @BindView(R.id.loadStatusView)
-    LoadStatusView loadStatusView;
 
 
     private NewsAdapter newsAdapter;
@@ -69,6 +67,8 @@ public class NewsSearchActivity extends MvpActivity<NewsSearchPresenter> impleme
         footView = new FootView(getContext());
         footView.setVisibility(View.GONE);
         listView.addFooterView(footView);
+
+        addLoadView(R.id.rootview);
     }
 
     @Override
@@ -86,7 +86,7 @@ public class NewsSearchActivity extends MvpActivity<NewsSearchPresenter> impleme
         listView.setOnScrollListener(this);
         listView.setOnItemClickListener(this);
         footView.setOnFootViewErrorClickListener(this);
-        loadStatusView.setonReloadClickListener(this);
+        getLoadStatusView().setonReloadClickListener(this);
         et_content.setOnEditorActionListener(this);
     }
 
@@ -130,13 +130,13 @@ public class NewsSearchActivity extends MvpActivity<NewsSearchPresenter> impleme
 
     @Override
     public void showLoadingView() {
-        loadStatusView.showLoading();
+        getLoadStatusView().showLoading();
         btn_search.setEnabled(false);
     }
 
     @Override
     public void hideLoadingView() {
-        loadStatusView.hideLoadStatus();
+        getLoadStatusView().hideLoadStatus();
         btn_search.setEnabled(true);
     }
 
@@ -147,7 +147,7 @@ public class NewsSearchActivity extends MvpActivity<NewsSearchPresenter> impleme
 
     @Override
     public void showReload() {
-        loadStatusView.showReload();
+        getLoadStatusView().showReload();
     }
 
 

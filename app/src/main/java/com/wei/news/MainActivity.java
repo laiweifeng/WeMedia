@@ -10,9 +10,13 @@ import com.wei.news.headline.fragments.HeadlineFragment;
 import com.wei.news.me.fragments.MeFragment;
 import com.wei.news.sdk.base.FragmentFactory;
 import com.wei.news.sdk.manager.TipManager;
+import com.wei.news.sdk.retrofit.RetrofitCreateHelper;
 import com.wei.news.video.fragments.VideoFragment;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
+import io.reactivex.disposables.Disposable;
 
 public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
 
@@ -24,6 +28,8 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     boolean isBack=false;
 
     private static final int HANDLER_BLACK=0;
+
+    ArrayList<Disposable> disposables=new ArrayList<>();
 
     public int getLayoutId() {
         return R.layout.activity_main;
@@ -97,6 +103,11 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
            return;
         }
         super.onBackPressed();
+        RetrofitCreateHelper.getInstance().clearDisposables(disposables);
+    }
+
+    public  void addDisposable(Disposable disposable){
+        disposables.add(disposable);
     }
 
 

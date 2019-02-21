@@ -22,8 +22,6 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
     @BindView(R.id.refresh_layout)
     SwipeRefreshLayout swipeRefreshLayout;
 
-    @BindView(R.id.loadStatusView)
-    LoadStatusView loadStatusView;
 
     @BindView(R.id.iv_back)
     ImageButton iv_back;
@@ -44,6 +42,8 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
                 android.R.color.holo_green_light,
                 android.R.color.holo_red_light,
                 android.R.color.holo_orange_light);
+
+        addLoadView(R.id.rootview);
     }
 
 
@@ -80,7 +80,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
 //            }
 //        });
 
-        loadStatusView.showLoading();
+        getLoadStatusView().showLoading();
         x5WebView.loadUrl(url);
 
     }
@@ -103,13 +103,13 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
                 swipeRefreshLayout.setRefreshing(false);
-                loadStatusView.hideLoadStatus();
+                getLoadStatusView().hideLoadStatus();
             }
 
             @Override
             public void onReceivedError(WebView webView, int i, String s, String s1) {
                 super.onReceivedError(webView, i, s, s1);
-                loadStatusView.showReload();
+                getLoadStatusView().showReload();
             }
         });
 
@@ -121,10 +121,10 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
             }
         });
 
-        loadStatusView.setonReloadClickListener(new LoadStatusView.onReloadClickListener() {
+        getLoadStatusView().setonReloadClickListener(new LoadStatusView.onReloadClickListener() {
             @Override
             public void OnReloadClick() {
-                loadStatusView.showLoading();
+                getLoadStatusView().showLoading();
                 x5WebView.loadUrl(url);
             }
         });

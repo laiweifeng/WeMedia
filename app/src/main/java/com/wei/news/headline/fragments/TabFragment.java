@@ -7,6 +7,7 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.wei.news.MainActivity;
 import com.wei.news.R;
 import com.wei.news.sdk.manager.CacheManager;
 import com.wei.news.sdk.manager.TipManager;
@@ -25,6 +26,7 @@ import com.wei.news.utils.L;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import io.reactivex.disposables.Disposable;
 
 public class TabFragment extends MvpFragment<TabPresenter> implements ITabView, SwipeRefreshLayout.OnRefreshListener, AbsListView.OnScrollListener, FootView.OnFootViewErrorClickListener, AdapterView.OnItemClickListener, LoadStatusView.onReloadClickListener {
 
@@ -34,8 +36,6 @@ public class TabFragment extends MvpFragment<TabPresenter> implements ITabView, 
     @BindView(R.id.refresh_layout)
     SwipeRefreshLayout swipeRefreshLayout;
 
-    @BindView(R.id.loadStatusView)
-    LoadStatusView loadStatusView;
 
 
     private String title;
@@ -43,9 +43,6 @@ public class TabFragment extends MvpFragment<TabPresenter> implements ITabView, 
     private ArrayList<TypeListEntity.Data> newsList;
 
     private NewsAdapter tabAdapter;
-
-
-
 
     private FootView footView;
     private CacheManager cacheManager;
@@ -70,6 +67,7 @@ public class TabFragment extends MvpFragment<TabPresenter> implements ITabView, 
         listView.addFooterView(footView);
 
         cacheManager = new CacheManager<TypeListEntity.Data>();
+        addLoadView(R.id.rootview);
     }
 
 
@@ -105,7 +103,7 @@ public class TabFragment extends MvpFragment<TabPresenter> implements ITabView, 
         listView.setOnScrollListener(this);
         listView.setOnItemClickListener(this);
         footView.setOnFootViewErrorClickListener(this);
-        loadStatusView.setonReloadClickListener(this);
+        getLoadStatusView().setonReloadClickListener(this);
     }
 
     public void setTitle(String title) {
@@ -128,7 +126,7 @@ public class TabFragment extends MvpFragment<TabPresenter> implements ITabView, 
 
     @Override
     public void loadData(TypeListEntity data) {
-        loadStatusView.hideLoadStatus();
+        getLoadStatusView().hideLoadStatus();
         if(data!=null){
             newsList.clear();
             newsList.addAll(data.getData());
@@ -150,7 +148,7 @@ public class TabFragment extends MvpFragment<TabPresenter> implements ITabView, 
     public void showLoadingView() {
         swipeRefreshLayout.setRefreshing(true);
         if(newsList.size()<=0){
-            loadStatusView.showLoading();
+            getLoadStatusView().showLoading();
         }
     }
 
@@ -168,8 +166,13 @@ public class TabFragment extends MvpFragment<TabPresenter> implements ITabView, 
     @Override
     public void showReload() {
         if(newsList.size()<=0){
-            loadStatusView.showReload();
+            getLoadStatusView().showReload();
         }
+    }
+
+    @Override
+    public void addDisposable(Disposable disposable) {
+        ((MainActivity)getActivity()).addDisposable(disposable);
     }
 
 

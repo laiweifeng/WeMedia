@@ -5,6 +5,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.Window;
 
+import com.wei.news.MainActivity;
 import com.wei.news.R;
 import com.wei.news.sdk.mvp.MvpFragment;
 import com.wei.news.utils.L;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import io.reactivex.disposables.Disposable;
 
 public class VideoFragment extends MvpFragment<VideoPresenter> implements IVideoView, SwipeRefreshLayout.OnRefreshListener, ViewPager.OnPageChangeListener {
 
@@ -75,10 +77,11 @@ public class VideoFragment extends MvpFragment<VideoPresenter> implements IVideo
     public void loadData(VideoEntity videoEntity) {
         fragments.clear();
         List<VideoEntity.Data> datas = videoEntity.getData();
-       for (VideoEntity.Data data :datas){
-           fragments.add(new SmallVideoFragment(data));
-       }
-
+        if(datas!=null){
+            for (VideoEntity.Data data :datas){
+                fragments.add(new SmallVideoFragment(data));
+            }
+        }
        videFragmentAdapter.notifyDataSetChanged();
        swipeRefreshLayout.setEnabled(false);
     }
@@ -133,6 +136,11 @@ public class VideoFragment extends MvpFragment<VideoPresenter> implements IVideo
     @Override
     public void showReload() {
 
+    }
+
+    @Override
+    public void addDisposable(Disposable disposable) {
+        ((MainActivity)getActivity()).addDisposable(disposable);
     }
 
     @Override

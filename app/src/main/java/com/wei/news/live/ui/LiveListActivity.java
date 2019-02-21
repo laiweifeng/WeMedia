@@ -42,8 +42,6 @@ public class LiveListActivity extends MvpActivity<LiveListPresenter> implements 
     @BindView(R.id.refresh_layout)
     SwipeRefreshLayout swipeRefreshLayout;
 
-    @BindView(R.id.loadStatusView)
-    LoadStatusView loadStatusView;
 
     @BindView(R.id.iv_back)
     ImageView iv_back;
@@ -87,6 +85,8 @@ public class LiveListActivity extends MvpActivity<LiveListPresenter> implements 
         gv_live_list.addFooterView(footView);
         footView.hide();
 
+        addLoadView(R.id.rootview);
+
     }
 
     @Override
@@ -108,7 +108,7 @@ public class LiveListActivity extends MvpActivity<LiveListPresenter> implements 
         swipeRefreshLayout.setOnRefreshListener(this);
         gv_live_list.setOnScrollListener(this);
         gv_live_list.setOnItemClickListener(this);
-        loadStatusView.setonReloadClickListener(this);
+        getLoadStatusView().setonReloadClickListener(this);
         iv_back.setOnClickListener(this);
         btn_search.setOnClickListener(this);
         et_content.setOnEditorActionListener(this);
@@ -152,7 +152,7 @@ public class LiveListActivity extends MvpActivity<LiveListPresenter> implements 
     @Override
     public void showLoadingView() {
         if(liveListDataList.size()<=0){
-            loadStatusView.showLoading();
+            getLoadStatusView().showLoading();
         }
         swipeRefreshLayout.setRefreshing(true);
     }
@@ -160,7 +160,7 @@ public class LiveListActivity extends MvpActivity<LiveListPresenter> implements 
     @Override
     public void hideLoadingView() {
         btn_search.setEnabled(true);
-        loadStatusView.hideLoadStatus();
+        getLoadStatusView().hideLoadStatus();
         swipeRefreshLayout.setRefreshing(false);
     }
 
@@ -172,7 +172,7 @@ public class LiveListActivity extends MvpActivity<LiveListPresenter> implements 
     @Override
     public void showReload() {
         if(liveListDataList.size()<=0){
-            loadStatusView.showReload();
+            getLoadStatusView().showReload();
         }
     }
 

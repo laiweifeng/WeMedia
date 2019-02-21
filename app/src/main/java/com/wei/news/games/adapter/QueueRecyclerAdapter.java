@@ -289,8 +289,6 @@ public class QueueRecyclerAdapter
 
            } else if (viewType == FOOT_VIEW) {
                footView = (FootView) itemView;
-
-
            }
 
        }

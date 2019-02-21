@@ -8,5 +8,6 @@ public interface BaseView {
     void hideLoadingView();
     void showNoMore();
     void showReload();
+    void addDisposable(Disposable disposable);
 
 }

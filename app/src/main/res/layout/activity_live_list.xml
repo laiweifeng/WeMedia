@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     >
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,7 +45,8 @@
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/rootview">
 
         <android.support.v4.widget.SwipeRefreshLayout
             android:id="@+id/refresh_layout"
@@ -69,12 +71,6 @@
         </android.support.v4.widget.SwipeRefreshLayout>
 
 
-        <com.wei.news.sdk.widget.LoadStatusView
-            android:id="@+id/loadStatusView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-        </com.wei.news.sdk.widget.LoadStatusView>
     </RelativeLayout>
 
 </LinearLayout>

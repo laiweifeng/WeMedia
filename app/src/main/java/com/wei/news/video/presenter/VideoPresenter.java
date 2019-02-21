@@ -44,7 +44,7 @@ public class VideoPresenter  extends BasePresenter<IVideoView,IVideoModel> imple
             }
             @Override
             public void onSub(Disposable d) {
-
+                mvpView.addDisposable(d);
             }
         });
 

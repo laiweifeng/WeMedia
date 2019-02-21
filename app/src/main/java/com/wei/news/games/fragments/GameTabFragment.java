@@ -7,6 +7,7 @@ import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.wei.news.MainActivity;
 import com.wei.news.R;
 import com.wei.news.games.adapter.QueueRecyclerAdapter;
 import com.wei.news.games.entity.GameListEntity;
@@ -26,6 +27,7 @@ import com.wei.news.utils.L;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import io.reactivex.disposables.Disposable;
 
 public class GameTabFragment extends MvpFragment<GameTabPresenter>
         implements IGameTabView, SwipeRefreshLayout.OnRefreshListener,
@@ -40,8 +42,6 @@ public class GameTabFragment extends MvpFragment<GameTabPresenter>
     @BindView(R.id.refresh_layout)
     SwipeRefreshLayout swipeRefreshLayout;
 
-    @BindView(R.id.loadStatusView)
-    LoadStatusView loadStatusView;
 
 
     private String title;
@@ -72,6 +72,8 @@ public class GameTabFragment extends MvpFragment<GameTabPresenter>
 
 
         cacheManager = new CacheManager<GameListEntity.Data>();
+
+        addLoadView(R.id.rootview);
     }
 
 
@@ -108,7 +110,7 @@ public class GameTabFragment extends MvpFragment<GameTabPresenter>
 
         queueRecyclerAdapter.setOnSlideToBottomListener(this);
 
-        loadStatusView.setonReloadClickListener(this);
+        getLoadStatusView().setonReloadClickListener(this);
 
         queueRecyclerAdapter.setOnBottomErrorClickListener(this);
 
@@ -142,7 +144,7 @@ public class GameTabFragment extends MvpFragment<GameTabPresenter>
 
     @Override
     public void loadData(GameListEntity data) {
-        loadStatusView.hideLoadStatus();
+        getLoadStatusView().hideLoadStatus();
         if(data!=null){
             queueRecyclerAdapter.refreshData(data.getData());
             cacheManager.putCache(getContext(),getCatid(),data.getData());
@@ -159,7 +161,7 @@ public class GameTabFragment extends MvpFragment<GameTabPresenter>
     public void showLoadingView() {
         swipeRefreshLayout.setRefreshing(true);
         if(mData.size()<=0){
-            loadStatusView.showLoading();
+            getLoadStatusView().showLoading();
         }
     }
 
@@ -179,8 +181,13 @@ public class GameTabFragment extends MvpFragment<GameTabPresenter>
     @Override
     public void showReload() {
         if(mData.size()<=0){
-            loadStatusView.showReload();
+            getLoadStatusView().showReload();
         }
+    }
+
+    @Override
+    public void addDisposable(Disposable disposable) {
+        ((MainActivity)getActivity()).addDisposable(disposable);
     }
 
     @Override

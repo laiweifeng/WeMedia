@@ -5,7 +5,7 @@ import com.wei.news.live.model.LiveModel;
 import com.wei.news.live.view.ILiveView;
 import com.wei.news.sdk.base.BasePresenter;
 
-public class LivePresenter extends BasePresenter<ILiveView,ILiveModel> implements ILivePresenter {
+public class LivePresenter extends BasePresenter<ILiveView,ILiveModel> {
 
     public  LivePresenter(ILiveView iLiveView){
         attachView(iLiveView,new LiveModel());
