@@ -42,7 +42,7 @@ key自己上去注册账户密码，并添加以下接口：
  演示APK下载
  
  
-  ![image](https://github.com/laiweifeng/WeMedia/blob/master/screenPicture/1544769249.png)
+  ![image](https://github.com/laiweifeng/WeMedia/blob/master/screenPicture/1550732033.png)
 
  
  
