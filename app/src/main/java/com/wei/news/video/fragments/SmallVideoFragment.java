@@ -3,13 +3,13 @@ package com.wei.news.video.fragments;
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;

@@ -1,11 +1,12 @@
 package com.wei.news.games.ui;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.liulishuo.okdownload.DownloadTask;
 import com.wei.news.R;
@@ -57,7 +58,7 @@ public class DownloadManagerActivity extends BaseActivity implements View.OnClic
 
         queueRecyclerAdapter = new QueueRecyclerAdapter(getContext(), mData, downloadManager);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        layoutManager.setOrientation(OrientationHelper. VERTICAL);
+        layoutManager.setOrientation(RecyclerView. VERTICAL);
         listView.setLayoutManager(layoutManager);
         listView.setAdapter(queueRecyclerAdapter);
 

@@ -1,11 +1,13 @@
 package com.wei.news.games.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.wei.news.MainActivity;
 import com.wei.news.R;
@@ -77,6 +79,7 @@ public class GameTabFragment extends MvpFragment<GameTabPresenter>
     }
 
 
+    @SuppressLint("WrongConstant")
     @Override
     public void initData() {
         mData =cacheManager.getCache(getContext(),getCatid());
@@ -89,7 +92,7 @@ public class GameTabFragment extends MvpFragment<GameTabPresenter>
         DownloadManager downloadManager=DownloadManager.getInstance();
         queueRecyclerAdapter=new QueueRecyclerAdapter(getActivity(), mData,downloadManager);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        layoutManager.setOrientation(OrientationHelper. VERTICAL);
+        layoutManager.setOrientation(OrientationHelper.VERTICAL);
         listView.setLayoutManager(layoutManager);
         listView.setAdapter(queueRecyclerAdapter);
 

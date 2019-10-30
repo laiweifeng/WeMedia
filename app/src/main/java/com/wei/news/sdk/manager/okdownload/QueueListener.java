@@ -17,12 +17,13 @@
 package com.wei.news.sdk.manager.okdownload;
 
 import android.content.res.Resources;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.util.SparseArray;
 import android.widget.Button;
 import android.widget.ProgressBar;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.liulishuo.okdownload.DownloadTask;
 import com.liulishuo.okdownload.StatusUtil;

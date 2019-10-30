@@ -2,11 +2,12 @@ package com.wei.news.headline.ui;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import androidx.appcompat.app.ActionBar;
 
 import com.wei.news.R;
 import com.wei.news.sdk.manager.IntentManager;

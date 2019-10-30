@@ -1,11 +1,12 @@
 package com.wei.news.headline.fragments;
 
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.wei.news.MainActivity;
 import com.wei.news.R;

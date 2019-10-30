@@ -1,7 +1,6 @@
 package com.wei.news.live.ui;
 
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -12,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.wei.news.R;
 import com.wei.news.live.adapter.LiveHostAdapter;

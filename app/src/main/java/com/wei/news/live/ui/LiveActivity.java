@@ -23,6 +23,7 @@ import com.wei.news.live.view.ILiveView;
 import com.wei.news.sdk.manager.IntentManager;
 import com.wei.news.sdk.manager.DimensionManager;
 import com.wei.news.sdk.manager.GlideManager;
+import com.wei.news.sdk.manager.TipManager;
 import com.wei.news.sdk.mvp.MvpActivity;
 import com.wei.news.utils.L;
 import com.zhy.view.flowlayout.FlowLayout;
@@ -108,6 +109,10 @@ public class LiveActivity extends MvpActivity<LivePresenter> implements ILiveVie
 
         mData= (LiveListEntity.Data) getIntent().getBundleExtra(IntentManager.KEY_NAME).getSerializable("LiveData");
         List<String> videoUrls = mData.getVideoUrls();
+        if(videoUrls.size()==0){
+            TipManager.showTip("服务器接口已关闭");
+            return;
+        }
         videoPath = videoUrls.get(0);
         L.d("videoPath:"+videoPath);
         tv_title.setText(mData.getTitle());

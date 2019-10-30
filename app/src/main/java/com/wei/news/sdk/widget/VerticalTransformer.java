@@ -1,7 +1,8 @@
 package com.wei.news.sdk.widget;
 
-import android.support.v4.view.ViewPager;
 import android.view.View;
+
+import androidx.viewpager.widget.ViewPager;
 
 public class VerticalTransformer  implements ViewPager.PageTransformer{
 

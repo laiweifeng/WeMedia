@@ -5,7 +5,7 @@
     android:background="@drawable/video_loading_bg"
     >
 
-    <android.support.v4.widget.SwipeRefreshLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refresh_layout"
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
@@ -15,7 +15,7 @@
             android:layout_height="match_parent">
 
         </com.wei.news.sdk.widget.VerticalViewPager>
-    </android.support.v4.widget.SwipeRefreshLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
 

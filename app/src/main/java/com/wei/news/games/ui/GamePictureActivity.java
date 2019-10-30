@@ -1,8 +1,9 @@
 package com.wei.news.games.ui;
 
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.widget.TextView;
+
+import androidx.viewpager.widget.ViewPager;
 
 import com.wei.news.R;
 import com.wei.news.games.adapter.GameFragmentAdapter;

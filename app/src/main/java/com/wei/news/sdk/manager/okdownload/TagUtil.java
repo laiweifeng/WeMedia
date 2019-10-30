@@ -16,7 +16,8 @@
 
 package com.wei.news.sdk.manager.okdownload;
 
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 import com.liulishuo.okdownload.DownloadTask;
 

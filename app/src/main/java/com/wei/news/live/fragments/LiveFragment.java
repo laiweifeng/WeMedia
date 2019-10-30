@@ -1,11 +1,12 @@
 package com.wei.news.live.fragments;
 
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.wei.news.R;
 import com.wei.news.live.adapter.LiveHostAdapter;
@@ -25,6 +26,7 @@ import com.wei.news.sdk.mvp.MvpFragment;
 import com.wei.news.sdk.widget.GridViewWithHeaderAndFooter;
 import com.wei.news.sdk.widget.LoadStatusView;
 import com.wei.news.sdk.widget.SearchBoxView;
+import com.wei.news.utils.L;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -189,6 +191,7 @@ public class LiveFragment extends MvpFragment<LiveChannelPresenter> implements I
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if(parent.getId()==R.id.gv_live_list){
             LiveListEntity.Data data= (LiveListEntity.Data) parent.getItemAtPosition(position+2);
+            L.d(data.toString());
             Bundle bundle=new Bundle();
             bundle.putSerializable("LiveData",data);
             IntentManager.startActivity(getContext(), LiveActivity.class,bundle);

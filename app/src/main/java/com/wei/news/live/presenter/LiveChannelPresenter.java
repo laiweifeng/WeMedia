@@ -34,7 +34,7 @@ public class LiveChannelPresenter extends BasePresenter<ILiveChannelView,ILiveCh
         RetrofitCreateHelper.getInstance().onSubscribe(bannerEntityObservable,new ApiCallback<BannerEntity>() {
             @Override
             public void onSuccess(BannerEntity entity) {
-
+                if(mvpView!=null)
                 mvpView.loadBannerData(entity);
 
             }
@@ -46,6 +46,7 @@ public class LiveChannelPresenter extends BasePresenter<ILiveChannelView,ILiveCh
 
             @Override
             public void onFinish() {
+                if(mvpView!=null)
                 mvpView.hideLoadingView();
             }
 
@@ -65,6 +66,7 @@ public class LiveChannelPresenter extends BasePresenter<ILiveChannelView,ILiveCh
         RetrofitCreateHelper.getInstance().onSubscribe(liveTagEntityObservable,new ApiCallback<LiveTagEntity>() {
             @Override
             public void onSuccess(LiveTagEntity entity) {
+                if(mvpView!=null)
                 L.d("loadTagData onSuccess");
                 mvpView.loadTagData(entity);
             }
@@ -104,17 +106,19 @@ public class LiveChannelPresenter extends BasePresenter<ILiveChannelView,ILiveCh
                         }
                     }
                 }
-
-                mvpView.loadLiveListData(liveData);
+                if(mvpView!=null)
+                 mvpView.loadLiveListData(liveData);
             }
 
             @Override
             public void onFailure(String msg) {
+                if(mvpView!=null)
                 mvpView.showReload();
             }
 
             @Override
             public void onFinish() {
+                if(mvpView!=null)
                 mvpView.hideLoadingView();
             }
             @Override

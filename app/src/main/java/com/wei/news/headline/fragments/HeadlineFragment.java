@@ -1,14 +1,13 @@
 package com.wei.news.headline.fragments;
 
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
 import com.wei.news.MainActivity;
 import com.wei.news.R;
 import com.wei.news.headline.TagsDialog;

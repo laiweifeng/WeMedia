@@ -2,14 +2,15 @@ package com.wei.news.games.ui;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.liulishuo.okdownload.DownloadTask;
 import com.liulishuo.okdownload.StatusUtil;

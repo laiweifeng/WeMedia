@@ -8,15 +8,16 @@ import java.util.Set;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 /**
  * 
  * @author laiweifeng
  *
- *	所用知识：单例、工厂、泛型
+ *	单例、工厂、泛型
  *
  */
 public class FragmentFactory {
@@ -45,7 +46,7 @@ public class FragmentFactory {
 		return mContext;
 	}
 
-	
+
 	private <T extends Fragment> Fragment createFragment(Class<T> clazz) {
 		Fragment fragment = null;
 		try {
@@ -53,10 +54,13 @@ public class FragmentFactory {
 			FragmentTransaction fragmentTransaction = mContext.getSupportFragmentManager().beginTransaction();
 			hideFragment(fragmentTransaction);
 			if (fragment == null) {
-
+				Fragment fragmentByTag = mContext.getSupportFragmentManager().findFragmentByTag(clazz.getName());
+				if(fragmentByTag!=null){
+					fragmentTransaction.remove(fragmentByTag);//被系统回收后，
+				}
 				fragment = (Fragment) clazz.newInstance();
 				setFragment(fragment);
-				fragmentTransaction.add(mLayoutId, fragment);
+				fragmentTransaction.add(mLayoutId, fragment,clazz.getName());
 				fragmentTransaction.commit();
 			} else {
 				fragmentTransaction.show(fragment);

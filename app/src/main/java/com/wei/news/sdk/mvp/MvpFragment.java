@@ -2,8 +2,9 @@ package com.wei.news.sdk.mvp;
 
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.View;
+
+import androidx.annotation.Nullable;
 
 import com.wei.news.sdk.base.BaseFragment;
 import com.wei.news.sdk.base.BasePresenter;

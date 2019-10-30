@@ -1,7 +1,6 @@
 package com.wei.news.sdk.manager;
 
 import android.content.Context;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.Toast;
 

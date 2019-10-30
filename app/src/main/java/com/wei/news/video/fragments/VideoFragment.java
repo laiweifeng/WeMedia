@@ -1,9 +1,9 @@
 package com.wei.news.video.fragments;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.view.Window;
+
+import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.viewpager.widget.ViewPager;
 
 import com.wei.news.MainActivity;
 import com.wei.news.R;

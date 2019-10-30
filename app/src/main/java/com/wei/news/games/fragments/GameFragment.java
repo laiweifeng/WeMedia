@@ -1,13 +1,14 @@
 package com.wei.news.games.fragments;
 
 import android.content.Intent;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageButton;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
 import com.wei.news.MainActivity;
 import com.wei.news.R;
 import com.wei.news.games.adapter.GameFragmentAdapter;

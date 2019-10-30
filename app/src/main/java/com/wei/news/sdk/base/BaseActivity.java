@@ -2,9 +2,10 @@ package com.wei.news.sdk.base;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.ViewGroup;
 import android.view.Window;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.wei.news.R;
 import com.wei.news.sdk.retrofit.RetrofitCreateHelper;

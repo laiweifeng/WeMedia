@@ -18,6 +18,8 @@ import java.util.List;
 public class NewsAdapter extends CommonAdapter {
 
 
+    private static final int IMAGE_SIZE = 3;
+
     public NewsAdapter(Context context, List data, int layoutId) {
         super(context, data, layoutId);
     }
@@ -44,7 +46,7 @@ public class NewsAdapter extends CommonAdapter {
         List<String> imageUrls = data.getImageUrls();
         if(imageUrls!=null){
             int size = imageUrls.size();
-             if(size>=3){
+             if(size>=IMAGE_SIZE){
                 showMoreLayout(ll_moreImg_layout,ll_oneImg_layout);
                 GlideManager.loadImager(App.getContext(),imageUrls.get(0),iv_moreImg_1);
                 GlideManager.loadImager(App.getContext(),imageUrls.get(1),iv_moreImg_2);
@@ -52,7 +54,7 @@ public class NewsAdapter extends CommonAdapter {
                 tv_moreImg_title.setText(data.getTitle());
                 tv_moreImg_author.setText(data.getPosterScreenName());
                 tv_moreImg_time.setText(data.getPublishDateStr().replaceAll("T"," "));
-            }else if(size>0&&size<3){
+            }else if(size>0&&size<IMAGE_SIZE){
                 showOneLayout(ll_moreImg_layout,ll_oneImg_layout);
                 GlideManager.loadImager(App.getContext(),imageUrls.get(0),iv_oneImg_1);
                 tv_oneImg_title.setText(data.getTitle());

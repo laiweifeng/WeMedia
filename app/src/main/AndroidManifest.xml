@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.wei.news">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -15,16 +15,18 @@
 
     <application
         android:name=".App"
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:networkSecurityConfig="@xml/network_security_config"
+        tools:replace="android:appComponentFactory"
+        android:appComponentFactory="weMedia"><!--//开启HTTP请求，27以上关闭了http-->
         <activity
             android:name=".live.ui.LiveActivity"
             android:configChanges="screenSize|keyboardHidden|orientation"
             android:theme="@style/NoActionBarBlackTheme"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity"
+            android:theme="@style/NoActionBarBlackTheme"></activity>
         <activity
             android:name=".headline.ui.NewsDetailsActivity"
             android:theme="@style/ActionBarTheme" />
@@ -37,16 +39,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".live.ui.LiveListActivity" />
+        <activity android:name=".live.ui.LiveListActivity"
+            android:theme="@style/NoActionBarBlackTheme"/>
         <activity
             android:name=".games.ui.DownloadManagerActivity"
             android:theme="@style/ActionBarTheme" />
-        <activity android:name=".games.ui.GameDescActivity" />
-        <activity android:name=".games.ui.GamePictureActivity" />
-        <activity android:name=".headline.ui.NewsSearchActivity" />
+        <activity android:name=".games.ui.GameDescActivity"
+            android:theme="@style/NoActionBarBlackTheme"/>
+        <activity android:name=".games.ui.GamePictureActivity"
+            android:theme="@style/NoActionBarBlackTheme"/>
+        <activity android:name=".headline.ui.NewsSearchActivity"
+            android:theme="@style/NoActionBarBlackTheme"/>
 
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="com.wei.news.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true">

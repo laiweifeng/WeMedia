@@ -2,7 +2,9 @@ package com.wei.news.sdk.permission;
 
 import android.app.Activity;
 import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -61,7 +63,7 @@ public class KbPermission {
      * @return
      */
     @NonNull
-    public static KbPermission with(@NonNull android.support.v4.app.Fragment fragment) {
+    public static KbPermission with(@NonNull Fragment fragment) {
         instance.setActivity(fragment.getActivity());
         return instance;
     }

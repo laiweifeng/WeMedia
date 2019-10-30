@@ -1,9 +1,10 @@
 package com.wei.news.me.fragments;
 
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewClient;
