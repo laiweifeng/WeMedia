@@ -115,7 +115,7 @@ public class DragTipAdapter extends AbsTipAdapter implements View.OnLongClickLis
             notifyDataSetChanged();
 
         }
-        v.startDrag(EMPTY_CLIP_DATA, new View.DragShadowBuilder(),
+        v.startDrag(EMPTY_CLIP_DATA, new View.DragShadowBuilder(v),
                 DragDropGirdView.DRAG_FAVORITE_TILE, 0);
     }
 

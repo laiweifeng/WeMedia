@@ -33,8 +33,12 @@ public class TabPresenter extends BasePresenter<ITabView,ITabModel> implements I
         RetrofitCreateHelper.getInstance().onSubscribe(observable, new ApiCallback<TypeListEntity>() {
             @Override
             public void onSuccess(TypeListEntity entity) {
-                mvpView.loadData(entity);
-                mvpView.showFootView();
+                if(entity.getData()!=null){
+                    mvpView.loadData(entity);
+                    mvpView.showFootView();
+                }else{
+                    mvpView.showReload();
+                }
             }
 
             @Override
@@ -67,7 +71,11 @@ public class TabPresenter extends BasePresenter<ITabView,ITabModel> implements I
         RetrofitCreateHelper.getInstance().onSubscribe(observable, new ApiCallback<TypeListEntity>() {
             @Override
             public void onSuccess(TypeListEntity entity) {
-                mvpView.addData(entity);
+                if(entity.getData()!=null){
+                    mvpView.addData(entity);
+                }else{
+                    mvpView.showErrorMoreLoadView();
+                }
             }
 
             @Override

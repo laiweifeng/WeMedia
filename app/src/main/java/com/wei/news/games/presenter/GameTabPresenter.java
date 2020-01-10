@@ -33,8 +33,12 @@ public class GameTabPresenter extends BasePresenter<IGameTabView,IGameTabModel> 
         RetrofitCreateHelper.getInstance().onSubscribe(observable, new ApiCallback<GameListEntity>() {
             @Override
             public void onSuccess(GameListEntity entity) {
-                mvpView.loadData(entity);
-                mvpView.showFootView();
+                if(entity.getData()!=null){
+                    mvpView.loadData(entity);
+                    mvpView.showFootView();
+                }else{
+                    mvpView.showReload();
+                }
             }
 
             @Override

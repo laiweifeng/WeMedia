@@ -1,5 +1,6 @@
 package com.wei.news.headline.fragments;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -14,6 +15,7 @@ import com.wei.news.headline.TagsDialog;
 import com.wei.news.headline.ui.NewsSearchActivity;
 import com.wei.news.sdk.manager.IntentManager;
 import com.wei.news.sdk.widget.SearchBoxView;
+import com.wei.news.utils.L;
 import com.wei.news.utils.TagsManager;
 import com.wei.news.sdk.base.BaseFragment;
 import com.wei.news.headline.adapter.NewsFragmentAdapter;
@@ -83,8 +85,9 @@ public class HeadlineFragment extends BaseFragment implements View.OnClickListen
         fragments = new ArrayList<>();
 
         if(mSelectPosition>0){
-            newsFragmentAdapter = new NewsFragmentAdapter(getChildFragmentManager(), fragments);
-            viewPager.setAdapter(newsFragmentAdapter);
+//            newsFragmentAdapter = new NewsFragmentAdapter(getChildFragmentManager(), fragments);
+//            viewPager.setAdapter(newsFragmentAdapter);
+            newsFragmentAdapter.notifyDataSetChanged(fragments);
         }
 
         List<Tip> dragTips = TagsManager.getNewsDragTips();
@@ -122,13 +125,18 @@ public class HeadlineFragment extends BaseFragment implements View.OnClickListen
     }
 
 
-    public void removeFragments(){
-        FragmentTransaction fragmentTransaction=((MainActivity)getContext()).getSupportFragmentManager().beginTransaction();
-        for (Fragment fragment : fragments) {
-            fragmentTransaction.remove(fragment);
-        }
-
-    }
+//    public void removeFragments(){
+//        FragmentTransaction fragmentTransaction=((MainActivity)getContext()).getSupportFragmentManager().beginTransaction();
+//        for (Fragment fragment : fragments) {
+//            try {
+//                fragmentTransaction.remove(fragment);
+//            }catch (Exception e){
+//                L.e("removeFragments:"+"name :"+fragment.getClass().getName()+"   " +
+//                        ""+e.getMessage());
+//            }
+//        }
+//
+//    }
 
 
     @Override
@@ -145,7 +153,7 @@ public class HeadlineFragment extends BaseFragment implements View.OnClickListen
 
                         if(isDataChannger){
 
-                            removeFragments();
+//                            removeFragments();
                             updateData();
                         }
 
